@@ -1,18 +1,9 @@
+import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document'
 import React from 'react'
-import Document, {
-  DocumentInitialProps,
-  DocumentContext,
-  Html,
-  Head,
-  Main,
-  NextScript
-} from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
-  static async getInitialProps(
-    ctx: DocumentContext
-  ): Promise<DocumentInitialProps> {
+  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
 
@@ -42,10 +33,7 @@ export default class MyDocument extends Document {
       <Html lang="pt">
         <Head>
           <meta charSet="utf-8" />
-          <link
-            href="https://fonts.googleapis.com/css?family=Roboto:400,500,700"
-            rel="stylesheet"
-          />
+          <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" />
           <link rel="icon" href="https://rocketseat.com.br/favicon.ico" />
         </Head>
         <body>

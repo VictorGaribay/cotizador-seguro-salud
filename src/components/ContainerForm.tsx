@@ -1,14 +1,32 @@
+import { useFormik } from 'formik'
 import React from 'react'
 import { FaCalendarAlt } from 'react-icons/fa'
+import SignInSchema from 'src/schemas/SignInSchema'
+import { dataSelect, termForm, titleForm } from '../helpers/ContentHelper'
 import Button from './base/Button'
 import Input from './base/Input'
-interface ContainerFormProps {
-  titleForm: { title: string; title1: string; title2: string }
-  termForm: { term: string; term1: string }
-  dataSelect: { value: string; text: string }[]
+
+interface ContainerFormProps {}
+
+interface MyFormValues {
+  document: string
+  birthday: string
+  phone: string
 }
 
-const ContainerForm: React.FC<ContainerFormProps> = ({ titleForm, termForm, dataSelect }) => {
+const ContainerForm: React.FC<ContainerFormProps> = () => {
+  const initialValues: MyFormValues = {
+    document: '',
+    birthday: '',
+    phone: ''
+  }
+  const formik = useFormik({
+    initialValues: initialValues,
+    validationSchema: SignInSchema,
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2))
+    }
+  })
   return (
     <div className="container__form">
       <div>
@@ -20,19 +38,45 @@ const ContainerForm: React.FC<ContainerFormProps> = ({ titleForm, termForm, data
           <label className="container__label--2"> {titleForm.title2} </label>
         </div>
         <div className="container__form--input">
-          <div>
-            <Input name="document" label="Nro documento" type="number" dataSelect={dataSelect} />
-            <Input
-              name="birthday"
-              label="Fecha de nacimiento"
-              type="date"
-              icon={<FaCalendarAlt className="container__icon" />}
-            />
-            <Input name="phone" label="Celular" type="number" />
-          </div>
-          <Input name="term" label="Acepto la" type="checkbox" termForm={termForm.term} />
-          <Input name="term1" label="Acepto la" type="checkbox" termForm={termForm.term1} />
-          <Button label="COMENCEMOS" onClick={() => alert('button')} />
+          <form onSubmit={formik.handleSubmit}>
+            <div>
+              <Input
+                onChange={() => formik.handleChange}
+                value={formik.values.document}
+                name="document"
+                label="Nro documento"
+                type="number"
+                dataSelect={dataSelect}
+              />
+              <div className="container__error">
+                {formik.touched.document && formik.errors.document ? formik.errors.document : null}
+              </div>
+              <Input
+                onChange={() => formik.handleChange}
+                value={formik.values.birthday}
+                name="birthday"
+                label="Fecha de nacimiento"
+                type="date"
+                icon={<FaCalendarAlt className="container__icon" />}
+              />
+              <div className="container__error">
+                {formik.touched.birthday && formik.errors.birthday ? formik.errors.birthday : null}
+              </div>
+              <Input
+                onChange={() => formik.handleChange}
+                value={formik.values.phone}
+                name="phone"
+                label="Celular"
+                type="number"
+              />
+              <div className="container__error">
+                {formik.touched.phone && formik.errors.phone ? formik.errors.phone : null}
+              </div>
+            </div>
+            <Input name="term" label="Acepto la" type="checkbox" termForm={termForm.term} />
+            <Input name="term1" label="Acepto la" type="checkbox" termForm={termForm.term1} />
+            <Button label="COMENCEMOS" onClick={() => formik.handleSubmit} />
+          </form>
         </div>
       </div>
     </div>

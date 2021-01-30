@@ -5,8 +5,9 @@ interface InputProps {
   type: string
   icon?: React.ReactNode
   dataSelect?: { value: string; text: string }[]
-  seePassword?: boolean
   termForm?: string
+  onChange?: () => void
+  value?: string
 }
 
 const Input: React.FC<InputProps> = ({ name, type, label, icon, dataSelect, termForm, ...props }) => {

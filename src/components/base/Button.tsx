@@ -9,7 +9,7 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, ...props }) => {
   return (
     <div>
       <button onClick={onClick} {...props}>
-        <label htmlFor={label}>{label}</label>
+        {label}
       </button>
     </div>
   )

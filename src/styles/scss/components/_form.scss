@@ -1,5 +1,13 @@
 .container__form--input {
   @import '../components/input';
+
+  .container__error {
+    color: #ce4336;
+    font-size: 12px;
+    width: 40%;
+    height: 18px;
+    margin: 3px;
+  }
   .container__terms {
     top: 0;
     margin-top: -6px;
@@ -17,8 +25,8 @@
 
   .container__floating {
     position: relative;
-    margin-top: 15px;
-    margin-bottom: 25px;
+    margin-top: 5px;
+    margin-bottom: 0px;
 
     .container__floating--label {
       font-size: 0.8em;
@@ -107,8 +115,6 @@
     label {
       font-size: 15px;
     }
-  }
-  button {
     &:hover {
       color: $button-h;
     }
