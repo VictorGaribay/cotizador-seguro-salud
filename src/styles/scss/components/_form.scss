@@ -1,0 +1,115 @@
+.container__form--input {
+  @import '../components/input';
+  .container__terms {
+    top: 0;
+    margin-top: -10px;
+  }
+  .container__icon {
+    cursor: pointer;
+    position: absolute;
+    left: 56%;
+    top: 30%;
+    color: #2f80ed;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .container__floating {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 25px;
+
+    .container__floating--label {
+      font-size: 0.8em;
+      color: #cccccc;
+      position: absolute;
+      pointer-events: none;
+      top: 20px;
+      left: 1.3em;
+      transition: all 0.1s ease;
+      width: 40%;
+    }
+
+    .container__floating--label1 {
+      font-size: 0.8em;
+      color: #cccccc;
+      position: absolute;
+      pointer-events: none;
+      width: 40%;
+      top: 20px;
+      left: 8em;
+      transition: all 0.1s ease;
+    }
+  }
+
+  .container__select {
+    height: 4em;
+    width: 18%;
+    padding: 5px;
+    border-right: 0;
+    border-color: #dfe2ef;
+    border-width: 0.1em;
+  }
+  .container__input--2 {
+    width: 40%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  optgroup {
+    font-size: 80px;
+  }
+  align-items: center;
+  height: 10%;
+  width: 100%;
+  div {
+    margin-top: 20px;
+  }
+  input {
+    border-color: #dfe2ef;
+    border-width: 0.1em;
+    border-radius: 6px;
+    height: 40px;
+    width: 58%;
+    padding: 5px;
+    padding-left: 15px;
+  }
+  a {
+    color: #c2c7dd;
+    font-weight: 500;
+    margin-left: 5px;
+  }
+  label {
+    height: 20px;
+    width: 16px;
+    i {
+      color: #c2c7dd;
+      display: block;
+      width: 55%;
+      padding-left: 35px;
+      text-align: start;
+      font-size: 13px;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    border: 0;
+    margin-top: 8%;
+    border-color: $content;
+    padding: 15px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    height: 56px;
+    width: 55%;
+    background-color: $content;
+    color: $button-in;
+    label {
+      font-size: 15px;
+    }
+  }
+  button {
+    &:hover {
+      color: rgb(250, 250, 250);
+    }
+  }
+}

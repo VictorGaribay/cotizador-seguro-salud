@@ -1,4 +1,5 @@
 @import 'components/color';
+@import 'components/form';
 body {
   margin: 0;
   padding: 0;
@@ -11,14 +12,15 @@ body {
 }
 
 .container__content {
-  width: 770px;
-  height: 650px;
+  position: relative;
+  width: 83%;
+  height: 86%;
   clip-path: polygon(0 0, 100% 0%, 96% 100%, 0% 100%);
   border-bottom-right-radius: 133px;
   background: $content;
 }
 .container__content--text {
-  height: 650px;
+  height: 86%;
   display: grid;
   margin-left: 8em;
   justify-content: start;
@@ -30,12 +32,12 @@ body {
 .container__title {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   div {
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: 100;
     font-size: 50px;
   }
   label {
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: 400;
   }
 }
@@ -55,15 +57,6 @@ body {
   }
 }
 
-.container__list > ul > li {
-  list-style: none;
-  padding-bottom: 20px;
-}
-ol {
-  list-style-position: inside;
-  list-style-type: decimal;
-  padding-left: 0;
-}
 .container__shield {
   list-style: none;
 }
@@ -77,9 +70,9 @@ ol {
 }
 
 .container__illustration {
-  left: -68%;
-  bottom: -162px;
-  position: relative;
+  left: 40%;
+  bottom: 20%;
+  position: absolute;
 }
 
 .container__content_title {
@@ -89,5 +82,29 @@ ol {
 }
 
 .container__form {
-  background: green;
+  padding-top: 20%;
+  padding-left: 5%;
+  grid-auto-columns: auto;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  align-items: start;
+  justify-content: start;
+  display: grid;
+  .container__label {
+    font-weight: 300;
+    font-size: 1.6em;
+    color: #818287;
+  }
+  .container__label--1 {
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #418bee;
+  }
+  .container_lab {
+    margin-bottom: 12px;
+  }
+  .container__label--2 {
+    font-weight: lighter;
+    font-size: 1.2em;
+    color: #9598a6;
+  }
 }
