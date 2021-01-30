@@ -9,7 +9,7 @@
     position: absolute;
     left: 56%;
     top: 30%;
-    color: #2f80ed;
+    color: $icon-1;
     &:hover {
       opacity: 0.8;
     }
@@ -21,7 +21,7 @@
 
     .container__floating--label {
       font-size: 0.8em;
-      color: #cccccc;
+      color: $label-c;
       position: absolute;
       pointer-events: none;
       top: 20px;
@@ -32,7 +32,7 @@
 
     .container__floating--label1 {
       font-size: 0.8em;
-      color: #cccccc;
+      color: $label-c;
       position: absolute;
       pointer-events: none;
       width: 40%;
@@ -47,7 +47,7 @@
     width: 18%;
     padding: 5px;
     border-right: 0;
-    border-color: #dfe2ef;
+    border-color: $border-inp;
     border-width: 0.1em;
   }
   .container__input--2 {
@@ -65,7 +65,7 @@
     margin-top: 20px;
   }
   input {
-    border-color: #dfe2ef;
+    border-color: $border-inp;
     border-width: 0.1em;
     border-radius: 6px;
     height: 40px;
@@ -74,7 +74,7 @@
     padding-left: 15px;
   }
   a {
-    color: #c2c7dd;
+    color: $link;
     font-weight: 500;
     margin-left: 5px;
   }
@@ -82,7 +82,7 @@
     height: 20px;
     width: 16px;
     i {
-      color: #c2c7dd;
+      color: $link;
       display: block;
       width: 55%;
       padding-left: 35px;
@@ -109,7 +109,7 @@
   }
   button {
     &:hover {
-      color: rgb(250, 250, 250);
+      color: $button-h;
     }
   }
 }

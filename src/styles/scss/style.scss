@@ -92,12 +92,12 @@ body {
   .container__label {
     font-weight: 300;
     font-size: 1.6em;
-    color: #818287;
+    color: $label;
   }
   .container__label--1 {
     font-weight: 400;
     font-size: 1.5em;
-    color: #418bee;
+    color: $label-1;
   }
   .container_lab {
     margin-bottom: 12px;
@@ -105,6 +105,6 @@ body {
   .container__label--2 {
     font-weight: lighter;
     font-size: 1.2em;
-    color: #9598a6;
+    color: $label-2;
   }
 }
