@@ -1,11 +1,13 @@
 import React from 'react'
 import { FaCalendarAlt } from 'react-icons/fa'
+import Input from './base/Input'
 interface ContainerFormProps {
   titleForm: { title: string; title1: string; title2: string }
   termForm: { term: string; term1: string }
+  dataSelect: { value: string; text: string }[]
 }
 
-const ContainerForm: React.FC<ContainerFormProps> = ({ titleForm, termForm }) => {
+const ContainerForm: React.FC<ContainerFormProps> = ({ titleForm, termForm, dataSelect }) => {
   return (
     <div className="container__form">
       <div>
@@ -18,34 +20,14 @@ const ContainerForm: React.FC<ContainerFormProps> = ({ titleForm, termForm }) =>
         </div>
         <div className="container__form--input">
           <div>
-            <div>
-              <div className="container__floating">
-                <select className="container__select" id="document" name="document">
-                  <optgroup>
-                    <option value="DNI">DNI</option>
-                    <option value="RUC">RUC</option>
-                  </optgroup>
-                </select>
-                <input
-                  type="number"
-                  name="username"
-                  className="container__input--2"
-                  autoComplete="off"
-                  autoFocus
-                  required
-                />
-                <label className="container__floating--label1">Nro documento</label>
-              </div>
-            </div>
-            <div className="container__floating">
-              <FaCalendarAlt className="container__icon" />
-              <input type="date" id="username" autoComplete="off" autoFocus required />
-              <label className="container__floating--label">Fecha de nacimiento</label>
-            </div>
-            <div className="container__floating">
-              <input type="number" id="password" className="form-control" autoComplete="off" required />
-              <label className="container__floating--label">Celular</label>
-            </div>
+            <Input name="document" label="Nro documento" type="number" dataSelect={dataSelect} />
+            <Input
+              name="birthday"
+              label="Fecha de nacimiento"
+              type="date"
+              icon={<FaCalendarAlt className="container__icon" />}
+            />
+            <Input name="phone" label="Celular" type="number" />
           </div>
           <div className="container__terms">
             <label>
