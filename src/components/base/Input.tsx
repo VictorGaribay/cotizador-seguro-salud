@@ -6,9 +6,10 @@ interface InputProps {
   icon?: React.ReactNode
   dataSelect?: { value: string; text: string }[]
   seePassword?: boolean
+  termForm?: string
 }
 
-const Input: React.FC<InputProps> = ({ name, type, label, icon, dataSelect, ...props }) => {
+const Input: React.FC<InputProps> = ({ name, type, label, icon, dataSelect, termForm, ...props }) => {
   const selectTag = (
     <select className="container__select" id="document" name="document">
       <optgroup>
@@ -21,20 +22,37 @@ const Input: React.FC<InputProps> = ({ name, type, label, icon, dataSelect, ...p
       </optgroup>
     </select>
   )
+  const checkBox = (
+    <label className="container__checkbox">
+      <input type="checkbox" />
+      <i>
+        {label}
+        <a href="http://google.com" target="_blank" rel="noopener noreferrer">
+          {termForm && termForm}
+        </a>
+      </i>
+    </label>
+  )
+
+  const input = (
+    <>
+      <input
+        className={dataSelect && 'container__input--2'}
+        name={name}
+        type={type}
+        autoComplete="off"
+        required
+        {...props}
+      />
+      <label className={dataSelect ? 'container__floating--label1' : 'container__floating--label'}>{label}</label>
+    </>
+  )
   return (
     <>
-      <div className="container__floating">
+      <div className={type === 'checkbox' ? 'container__terms' : 'container__floating'}>
         {dataSelect && selectTag}
         {icon || null}
-        <input
-          className={dataSelect && 'container__input--2'}
-          name={name}
-          type={type}
-          autoComplete="off"
-          required
-          {...props}
-        />
-        <label className={dataSelect ? 'container__floating--label1' : 'container__floating--label'}>{label}</label>
+        {type === 'checkbox' ? checkBox : input}
       </div>
     </>
   )

@@ -2,7 +2,7 @@
   @import '../components/input';
   .container__terms {
     top: 0;
-    margin-top: -10px;
+    margin-top: -6px;
   }
   .container__icon {
     cursor: pointer;
@@ -14,6 +14,7 @@
       opacity: 0.8;
     }
   }
+
   .container__floating {
     position: relative;
     margin-top: 15px;
@@ -100,7 +101,7 @@
     margin-bottom: 5px;
     border-radius: 8px;
     height: 56px;
-    width: 55%;
+    width: 38%;
     background-color: $content;
     color: $button-in;
     label {

@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaCalendarAlt } from 'react-icons/fa'
+import Button from './base/Button'
 import Input from './base/Input'
 interface ContainerFormProps {
   titleForm: { title: string; title1: string; title2: string }
@@ -29,31 +30,9 @@ const ContainerForm: React.FC<ContainerFormProps> = ({ titleForm, termForm, data
             />
             <Input name="phone" label="Celular" type="number" />
           </div>
-          <div className="container__terms">
-            <label>
-              <input type="checkbox" className="container__checkbox" />
-              <i>
-                Acepto la
-                <a href="http://google.com" target="_blank" rel="noopener noreferrer">
-                  {termForm.term}
-                </a>
-              </i>
-            </label>
-            <label>
-              <input type="checkbox" className="container__checkbox" />
-              <i>
-                Acepto la
-                <a href="http://google.com" target="_blank" rel="noopener noreferrer">
-                  {termForm.term1}
-                </a>
-              </i>
-            </label>
-          </div>
-          <div>
-            <button>
-              <label htmlFor="comencemos">COMENCEMOS</label>{' '}
-            </button>
-          </div>
+          <Input name="term" label="Acepto la" type="checkbox" termForm={termForm.term} />
+          <Input name="term1" label="Acepto la" type="checkbox" termForm={termForm.term1} />
+          <Button label="COMENCEMOS" onClick={() => alert('button')} />
         </div>
       </div>
     </div>
