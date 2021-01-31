@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import ContainerContent from 'src/components/ContainerContent'
 import ContainerForm from 'src/components/ContainerForm'
 import ContainerFormRegister from 'src/components/ContainerFormRegister'
+import ContainerPlan from 'src/components/ContainerPlan'
 import illustration from '../assets/Illustration-1.png'
 import { listItem, titleContent } from '../helpers/ContentHelper'
 
@@ -36,6 +37,8 @@ const Home: React.FC = () => {
       </div>
       {page === 1 ? (
         <ContainerFormRegister page={page} setPage={setPage} signData={signData} useData={useData} />
+      ) : page === 2 ? (
+        <ContainerPlan page={page} setPage={setPage} />
       ) : (
         <ContainerForm getUser={getUser} setData={setSignData} />
       )}

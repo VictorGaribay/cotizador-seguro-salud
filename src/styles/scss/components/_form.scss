@@ -10,6 +10,119 @@
     padding-left: 15px;
   }
 
+  .tg {
+    border-collapse: inherit;
+    border-spacing: 0;
+  }
+  .tg td {
+    border-color: #d0d1d4;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 12px 5px 22px 22px;
+    word-break: normal;
+  }
+  .tg th {
+    border-color: #d0d1d4;
+    background: #f0f2fa;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+  }
+
+  .tg__img {
+    margin-left: 30px;
+    width: 80px;
+    height: 60px;
+  }
+
+  .tg .tg-60hs {
+    height: -30px;
+    border-top: none;
+    border-bottom: none;
+    font-size: 20px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 12px;
+  }
+
+  .card-input-element {
+    display: none;
+  }
+
+  .card-input {
+    position: relative;
+    height: 80px;
+    width: 100%;
+    margin: 10px;
+    padding: 0px;
+    border-radius: 12%;
+    font-size: 13px;
+    border-width: 1px;
+    box-shadow: 0 0 1px 1px #d7d8df;
+  }
+  .panel-body {
+    position: relative;
+    .card__title {
+      top: -40px;
+      left: 10px;
+      font-weight: 200;
+      font-size: 10px;
+      position: absolute;
+    }
+    .card__title--1 {
+      top: -10px;
+      left: 8px;
+      font-weight: 200;
+      position: absolute;
+    }
+    .card__title--2 {
+      top: -15px;
+      left: 24px;
+      font-size: 24px;
+      font-weight: 300;
+      position: absolute;
+    }
+
+    .card__title--3 {
+      position: absolute;
+      top: 0px;
+      left: 10px;
+      font-weight: 200;
+      font-size: 10px;
+      position: absolute;
+    }
+  }
+  .card-input:hover {
+    cursor: pointer;
+  }
+  .card__img {
+    opacity: 0.2;
+    position: absolute;
+    width: 14%;
+    position: relative;
+    margin-left: 80%;
+    padding-top: 5%;
+  }
+  .card-input-element:checked + .card-input {
+    box-shadow: 0 0 1px 1px #2ecc71;
+    .card__img {
+      opacity: 1;
+    }
+  }
+
   .container__input--2 {
     width: 59%;
     border-top-left-radius: 0;
@@ -100,6 +213,14 @@
     width: 18%;
     padding: 5px;
     border-right: 0;
+    border-color: $border-inp;
+    border-width: 0.1em;
+  }
+
+  .container__select--2 {
+    height: 4em;
+    width: 100%;
+    padding: 5px;
     border-color: $border-inp;
     border-width: 0.1em;
   }

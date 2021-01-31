@@ -10,3 +10,18 @@ export const containerBack = {
   left: -8,
   position: 'absolute'
 } as React.CSSProperties
+
+export const iconBlue = {
+  color: '#2F80ED',
+  marginRight: '5px'
+} as React.CSSProperties
+
+export const iconBlueB = {
+  opacity: '0.2',
+  marginRight: '5px'
+} as React.CSSProperties
+
+export const textDecoration = {
+  textDecorationLine: 'line-through',
+  opacity: '0.2'
+} as React.CSSProperties

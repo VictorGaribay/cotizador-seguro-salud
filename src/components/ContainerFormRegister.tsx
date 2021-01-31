@@ -41,18 +41,17 @@ const ContainerFormRegister: React.FC<RegisterProps> = ({ useData, signData, set
     initialValues: initialValues,
     validationSchema: RegisterSchema,
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2))
+      setPage(page + 1)
     }
   })
   return (
     <div className="container__form">
       <div style={containerBack}>
-        <button onClick={() => setPage(page + 1)} style={btnBack}>
+        <button onClick={() => setPage(page - 1)} style={btnBack}>
           {'<'}
         </button>
         <label className="container__label--4"> PASO {page} </label> <label className="container__label--5">DE 7</label>
       </div>
-
       <div>
         <div className="container_lab">
           <label className="container__label"> {'Hola'} </label>
@@ -65,7 +64,6 @@ const ContainerFormRegister: React.FC<RegisterProps> = ({ useData, signData, set
           <div>
             <label className="container__label--3">Datos personales del titular</label>
           </div>
-
           <form onSubmit={formik.handleSubmit}>
             <div>
               <Input
@@ -131,7 +129,6 @@ const ContainerFormRegister: React.FC<RegisterProps> = ({ useData, signData, set
                   {formik.touched.gender && formik.errors.gender ? formik.errors.gender : null}
                 </div>
               </div>
-
               <div>
                 <label className="container__label--3">¿A quien vamos a asegurar?</label>
               </div>

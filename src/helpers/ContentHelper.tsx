@@ -12,6 +12,7 @@ export const listItem = [
 export const titleContent = { title: 'Seguro de', label: 'Salud' }
 
 export const titleForm = { title: 'Obtén tu', title1: 'Seguro ahora', title2: 'Ingresa los datos para comenzar' }
+
 export const titleRegister = { title: 'Valida que los datos sean correctos' }
 
 export const termForm = {
@@ -22,4 +23,34 @@ export const termForm = {
 export const dataSelect = [
   { value: 'DNI', text: 'DNI' },
   { value: 'RUC', text: 'RUC' }
+]
+
+export const serviceSelect = [
+  { value: '', text: 'Servcios brindados' },
+  { value: 'Servcios al hoga', text: 'Servcios al hogar' },
+  { value: 'Servcios semanales', text: 'Servcios semanales' },
+  { value: 'Servcios mensuales', text: 'Servcios mensuales' }
+]
+
+export const exclusionSelect = [
+  { value: '', text: 'Exclusiones' },
+  { value: 'Secuelas de enfermedades infecciosas', text: 'Secuelas de enfermedades infecciosas' },
+  { value: 'Lesiones autoinflingidas', text: 'Lesiones autoinflingidas' },
+  { value: 'Agresiones', text: 'Agresiones' }
+]
+
+export const plans = [
+  { title: 'BÁSICO', money: '160' },
+  { title: 'AVANZADO', money: '200' },
+  { title: 'PREMIUM', money: '250' },
+  { title: 'FULL', money: '500' }
+]
+
+export const dataServices = [
+  { icon: '❤', title: 'Lima (zona de cobertura)', status: true, id: 0 },
+  { icon: '❤', title: '+30 clínicas (en red afiliada)', status: true, id: 0 },
+  { icon: '❤', title: 'Médico a domicilio', status: false, id: 1 },
+  { icon: '❤', title: 'Chequeos preventivos', status: false, id: 1 },
+  { icon: '❤', title: 'Reembolso nacional', status: false, id: 2 },
+  { icon: '❤', title: 'Reembolso internacionl', status: false, id: 3 }
 ]
