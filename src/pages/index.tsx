@@ -5,7 +5,7 @@ import ContainerForm from 'src/components/ContainerForm'
 import ContainerFormRegister from 'src/components/ContainerFormRegister'
 import ContainerPlan from 'src/components/ContainerPlan'
 import EndPage from 'src/components/EndPage'
-import illustration from '../assets/Illustration-1.png'
+import illustration from '../../public/Illustration-1.png'
 import { listItem, titleContent } from '../helpers/ContentHelper'
 
 const Home: React.FC = () => {

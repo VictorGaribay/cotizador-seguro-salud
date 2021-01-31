@@ -1,5 +1,5 @@
+import checkImg from '.../../../public/gl_correct.png'
 import React from 'react'
-import checkImg from '../../assets/gl_correct.png'
 
 interface CardProps {
   title: string

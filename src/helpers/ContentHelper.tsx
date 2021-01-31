@@ -1,7 +1,7 @@
-import mobile1 from '../assets/gl_mobile-20x20-1.png'
-import mobile from '../assets/gl_mobile-20x20.png'
-import shield1 from '../assets/gl_shield-20x20-1.png'
-import shield from '../assets/gl_shield-20x20.png'
+import mobile1 from '../../public/gl_mobile-20x20-1.png'
+import mobile from '../../public/gl_mobile-20x20.png'
+import shield1 from '../../public/gl_shield-20x20-1.png'
+import shield from '../../public/gl_shield-20x20.png'
 export const listItem = [
   { url: shield, text: 'Cómpralo de manera fácil y rápida' },
   { url: mobile, text: 'Cotiza y compra tu seguro 100% digital' },

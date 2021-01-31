@@ -1,6 +1,6 @@
 import React from 'react'
 import { iconBlue, iconBlueB, textDecoration } from 'src/styles/styles'
-import imgTop from '../assets/illustration.png'
+import imgTop from '../../public/Illustration.png'
 interface TableServiceProps {
   services: { status: boolean; icon: string; title: string }[]
 }
