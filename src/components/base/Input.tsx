@@ -6,7 +6,7 @@ interface InputProps {
   icon?: React.ReactNode
   dataSelect?: { value: string; text: string }[]
   termForm?: string
-  onChange?: () => void
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   value?: string
 }
 
@@ -24,7 +24,7 @@ const Input: React.FC<InputProps> = ({ name, type, label, icon, dataSelect, term
     </select>
   )
   const checkBox = (
-    <label className="container__checkbox">
+    <label className={name === 'term1' ? 'container__checkbox' : 'container__checkbox--2'}>
       <input type="checkbox" />
       <i>
         {label}
@@ -33,6 +33,15 @@ const Input: React.FC<InputProps> = ({ name, type, label, icon, dataSelect, term
         </a>
       </i>
     </label>
+  )
+
+  const radioButton = (
+    <div>
+      <label>
+        <input type="radio" id={name} name={name} />
+        <i className="container__radio">{label}</i>
+      </label>
+    </div>
   )
 
   const input = (
@@ -50,10 +59,10 @@ const Input: React.FC<InputProps> = ({ name, type, label, icon, dataSelect, term
   )
   return (
     <>
-      <div className={type === 'checkbox' ? 'container__terms' : 'container__floating'}>
+      <div className={type === 'checkbox' ? '' : type === 'radio' ? '' : 'container__floating'}>
         {dataSelect && selectTag}
         {icon || null}
-        {type === 'checkbox' ? checkBox : input}
+        {type === 'checkbox' ? checkBox : type === 'radio' ? radioButton : input}
       </div>
     </>
   )

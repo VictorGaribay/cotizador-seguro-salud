@@ -12,6 +12,7 @@ export const listItem = [
 export const titleContent = { title: 'Seguro de', label: 'Salud' }
 
 export const titleForm = { title: 'Obtén tu', title1: 'Seguro ahora', title2: 'Ingresa los datos para comenzar' }
+export const titleRegister = { title: 'Valida que los datos sean correctos' }
 
 export const termForm = {
   term: 'Política de Protección de Datos Personales y los Términos y Condiciones.',

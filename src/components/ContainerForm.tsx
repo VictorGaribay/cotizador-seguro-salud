@@ -41,7 +41,7 @@ const ContainerForm: React.FC<ContainerFormProps> = () => {
           <form onSubmit={formik.handleSubmit}>
             <div>
               <Input
-                onChange={() => formik.handleChange}
+                onChange={formik.handleChange}
                 value={formik.values.document}
                 name="document"
                 label="Nro documento"
@@ -52,7 +52,7 @@ const ContainerForm: React.FC<ContainerFormProps> = () => {
                 {formik.touched.document && formik.errors.document ? formik.errors.document : null}
               </div>
               <Input
-                onChange={() => formik.handleChange}
+                onChange={formik.handleChange}
                 value={formik.values.birthday}
                 name="birthday"
                 label="Fecha de nacimiento"
@@ -63,7 +63,7 @@ const ContainerForm: React.FC<ContainerFormProps> = () => {
                 {formik.touched.birthday && formik.errors.birthday ? formik.errors.birthday : null}
               </div>
               <Input
-                onChange={() => formik.handleChange}
+                onChange={formik.handleChange}
                 value={formik.values.phone}
                 name="phone"
                 label="Celular"
@@ -72,9 +72,11 @@ const ContainerForm: React.FC<ContainerFormProps> = () => {
               <div className="container__error">
                 {formik.touched.phone && formik.errors.phone ? formik.errors.phone : null}
               </div>
+              <div className="container__checkbox--3">
+                <Input name="term" label="Acepto la" type="checkbox" termForm={termForm.term} />
+                <Input name="term1" label="Acepto la" type="checkbox" termForm={termForm.term1} />
+              </div>
             </div>
-            <Input name="term" label="Acepto la" type="checkbox" termForm={termForm.term} />
-            <Input name="term1" label="Acepto la" type="checkbox" termForm={termForm.term1} />
             <Button label="COMENCEMOS" onClick={() => formik.handleSubmit} />
           </form>
         </div>

@@ -8,7 +8,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1.8fr 1fr;
-  grid-template-rows: 750px;
+  grid-template-rows: 120%;
 }
 
 .container__content {
@@ -82,6 +82,7 @@ body {
 }
 
 .container__form {
+  position: relative;
   padding-top: 20%;
   padding-left: 5%;
   grid-auto-columns: auto;
@@ -106,5 +107,12 @@ body {
     font-weight: lighter;
     font-size: 1.2em;
     color: $label-2;
+  }
+  .container__label--3 {
+    font-weight: lighter;
+    font-size: 1.2em;
+    color: $label-2;
+    margin-top: 25px;
+    font-weight: 200;
   }
 }

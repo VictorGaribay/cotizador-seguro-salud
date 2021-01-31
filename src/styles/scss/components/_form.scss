@@ -1,21 +1,65 @@
 .container__form--input {
   @import '../components/input';
+  input {
+    border-color: $border-inp;
+    border-width: 0.1em;
+    border-radius: 6px;
+    height: 40px;
+    width: 77%;
+    padding: 5px;
+    padding-left: 15px;
+  }
+
+  .container__input--2 {
+    width: 59%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 
   .container__error {
     color: #ce4336;
     font-size: 12px;
-    width: 40%;
-    height: 18px;
+    width: 32em;
+    height: 16px;
     margin: 3px;
   }
-  .container__terms {
-    top: 0;
-    margin-top: -6px;
+  .container__error--1 {
+    color: #ce4336;
+    font-size: 12px;
+    width: 32em;
+    height: 16px;
+    padding-top: 5px;
+    padding-left: 24px;
+    margin: -16px;
   }
+
+  .container__checkbox {
+    position: absolute;
+    width: 120%;
+    margin-top: -36px;
+  }
+  .container__checkbox--2 {
+    position: absolute;
+    width: 120%;
+    margin-top: 15px;
+    height: 50px;
+  }
+  .container__checkbox--3 {
+    height: 50px;
+  }
+
+  .container__terms {
+    position: relative;
+    width: 30%;
+    top: 0;
+    margin-top: -36px;
+    margin-bottom: 24px;
+  }
+
   .container__icon {
     cursor: pointer;
     position: absolute;
-    left: 56%;
+    left: 75%;
     top: 30%;
     color: $icon-1;
     &:hover {
@@ -59,11 +103,7 @@
     border-color: $border-inp;
     border-width: 0.1em;
   }
-  .container__input--2 {
-    width: 40%;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
+
   optgroup {
     font-size: 80px;
   }
@@ -73,34 +113,34 @@
   div {
     margin-top: 20px;
   }
-  input {
-    border-color: $border-inp;
-    border-width: 0.1em;
-    border-radius: 6px;
-    height: 40px;
-    width: 58%;
-    padding: 5px;
-    padding-left: 15px;
-  }
   a {
     color: $link;
     font-weight: 500;
     margin-left: 5px;
   }
   label {
+    .container__radio {
+      color: $label;
+      display: block;
+      width: 150%;
+      padding-left: 35px;
+      text-align: start;
+      font-size: 13px;
+      margin-top: -20px;
+    }
     height: 20px;
     width: 16px;
     i {
       color: $link;
       display: block;
-      width: 55%;
+      width: 50%;
       padding-left: 35px;
       text-align: start;
       font-size: 13px;
     }
   }
 
-  button {
+  .container__button {
     cursor: pointer;
     border: 0;
     margin-top: 8%;
@@ -118,5 +158,48 @@
     &:hover {
       color: $button-h;
     }
+  }
+
+  .container__button--2 {
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    height: 1px;
+    width: 1px;
+  }
+
+  .container__button--3 {
+    cursor: pointer;
+    border: 0;
+    margin-top: 8%;
+    border-color: $content;
+    padding: 15px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    height: 56px;
+    width: 38%;
+    margin-left: 14em;
+    background-color: $btn-n;
+    color: $color-i;
+    label {
+      font-size: 15px;
+    }
+    &:hover {
+      background-color: $icon-1;
+      color: $button-h;
+    }
+  }
+  .container__input--3 {
+    position: absolute;
+    top: -15px;
+    left: -17px;
+  }
+
+  .container__i {
+    width: 120px;
+    position: absolute;
+    top: -10px;
+    left: -11px;
+    color: $color-i;
   }
 }
