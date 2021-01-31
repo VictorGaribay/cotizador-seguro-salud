@@ -9,7 +9,7 @@ const RegisterSchema = Yup.object().shape({
   name: Yup.string().required('Ingrese sus nombres.'),
   lastName: Yup.string().required('Ingrese el segundo apellido.'),
   firstName: Yup.string().required('Ingrese el primer apellido.'),
-  gander: Yup.string().required('Elija una opción.'),
+  gender: Yup.string().required('Elija una opción.'),
   person: Yup.string().required('Elija una opción.')
 })
 

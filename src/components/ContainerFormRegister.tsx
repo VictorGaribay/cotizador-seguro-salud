@@ -2,11 +2,19 @@ import { useFormik } from 'formik'
 import React from 'react'
 import { FaCalendarAlt } from 'react-icons/fa'
 import RegisterSchema from 'src/schemas/RegisterSchema'
+import { btnBack, containerBack } from 'src/styles/styles'
 import { dataSelect, titleRegister } from '../helpers/ContentHelper'
 import Button from './base/Button'
 import Input from './base/Input'
 
-interface RegisterProps {}
+interface RegisterProps {
+  page: number
+  setPage: (num: number) => void
+  signData: { document: string; birthday: string; phone: string }
+  useData: {
+    data: { name: { title: string; first: string; last: string }; gender: string }
+  }
+}
 
 interface MyFormValues {
   document: string
@@ -15,19 +23,20 @@ interface MyFormValues {
   firstName: string
   birthday: string
   person: string
-  gander: string
+  gender: string
 }
 
-const ContainerFormRegister: React.FC<RegisterProps> = ({}) => {
+const ContainerFormRegister: React.FC<RegisterProps> = ({ useData, signData, setPage, page }) => {
   const initialValues: MyFormValues = {
-    document: '',
-    name: '',
-    lastName: '',
-    firstName: '',
-    birthday: '',
+    document: signData.document,
+    name: useData.data.name.title,
+    lastName: useData.data.name.last,
+    firstName: useData.data.name.first,
+    birthday: signData.birthday,
     person: '',
-    gander: ''
+    gender: ''
   }
+
   const formik = useFormik({
     initialValues: initialValues,
     validationSchema: RegisterSchema,
@@ -37,10 +46,17 @@ const ContainerFormRegister: React.FC<RegisterProps> = ({}) => {
   })
   return (
     <div className="container__form">
+      <div style={containerBack}>
+        <button onClick={() => setPage(page + 1)} style={btnBack}>
+          {'<'}
+        </button>
+        <label className="container__label--4"> PASO {page} </label> <label className="container__label--5">DE 7</label>
+      </div>
+
       <div>
         <div className="container_lab">
           <label className="container__label"> {'Hola'} </label>
-          <label className="container__label--1"> {'Pepito'} </label>
+          <label className="container__label--1"> {initialValues.name} </label>
         </div>
         <div>
           <label className="container__label--2"> {titleRegister.title} </label>
@@ -106,13 +122,13 @@ const ContainerFormRegister: React.FC<RegisterProps> = ({}) => {
               </div>
               <label className="container__label--3">Genero</label>
               <div>
-                <Button radio name="gander" label="Hombre" onClick={() => formik.setFieldValue('gander', 'hombre')} />
+                <Button radio name="gender" label="Hombre" onClick={() => formik.setFieldValue('gender', 'hombre')} />
               </div>
 
               <div>
-                <Button radio name="gander" label="Mujer" onClick={() => formik.setFieldValue('gander', 'mujer')} />
+                <Button radio name="gender" label="Mujer" onClick={() => formik.setFieldValue('gender', 'mujer')} />
                 <div className="container__error--1">
-                  {formik.touched.gander && formik.errors.gander ? formik.errors.gander : null}
+                  {formik.touched.gender && formik.errors.gender ? formik.errors.gender : null}
                 </div>
               </div>
 
@@ -127,7 +143,6 @@ const ContainerFormRegister: React.FC<RegisterProps> = ({}) => {
                   onClick={() => formik.setFieldValue('person', 'solo a mi')}
                 />
               </div>
-
               <div>
                 <Button
                   radio

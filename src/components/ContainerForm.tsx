@@ -6,15 +6,18 @@ import { dataSelect, termForm, titleForm } from '../helpers/ContentHelper'
 import Button from './base/Button'
 import Input from './base/Input'
 
-interface ContainerFormProps {}
-
 interface MyFormValues {
   document: string
   birthday: string
   phone: string
 }
 
-const ContainerForm: React.FC<ContainerFormProps> = () => {
+interface ContainerFormProps {
+  getUser: () => void
+  setData: (p: MyFormValues) => void
+}
+
+const ContainerForm: React.FC<ContainerFormProps> = ({ getUser, setData }) => {
   const initialValues: MyFormValues = {
     document: '',
     birthday: '',
@@ -24,7 +27,8 @@ const ContainerForm: React.FC<ContainerFormProps> = () => {
     initialValues: initialValues,
     validationSchema: SignInSchema,
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2))
+      setData(values)
+      getUser()
     }
   })
   return (
