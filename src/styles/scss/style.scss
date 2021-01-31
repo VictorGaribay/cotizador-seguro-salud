@@ -80,6 +80,32 @@ body {
   margin-left: 2.5em;
   font-size: 50px;
 }
+.container__form--1 {
+  grid-template-columns: 510px;
+  grid-template-rows: 120px;
+  position: relative;
+  padding-top: 100%;
+  padding-left: 5%;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  align-items: center;
+  justify-content: start;
+  display: grid;
+  .container__label {
+    font-weight: 300;
+    font-size: 1.6em;
+    color: $label;
+  }
+  .container__label--1 {
+    font-weight: 400;
+    font-size: 1.5em;
+    color: $label-1;
+  }
+  .container__label--2 {
+    font-weight: lighter;
+    font-size: 1.2em;
+    color: $label-2;
+  }
+}
 
 .container__form {
   position: relative;

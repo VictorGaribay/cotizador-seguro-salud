@@ -4,6 +4,7 @@ import ContainerContent from 'src/components/ContainerContent'
 import ContainerForm from 'src/components/ContainerForm'
 import ContainerFormRegister from 'src/components/ContainerFormRegister'
 import ContainerPlan from 'src/components/ContainerPlan'
+import EndPage from 'src/components/EndPage'
 import illustration from '../assets/Illustration-1.png'
 import { listItem, titleContent } from '../helpers/ContentHelper'
 
@@ -39,6 +40,8 @@ const Home: React.FC = () => {
         <ContainerFormRegister page={page} setPage={setPage} signData={signData} useData={useData} />
       ) : page === 2 ? (
         <ContainerPlan page={page} setPage={setPage} />
+      ) : page === 3 ? (
+        <EndPage />
       ) : (
         <ContainerForm getUser={getUser} setData={setSignData} />
       )}

@@ -29,7 +29,7 @@ const ContainerPlan: React.FC<ContainerPlanProps> = ({ page, setPage }) => {
   const formik = useFormik({
     initialValues: initialValues,
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2))
+      setPage(page + 1)
     }
   })
 
